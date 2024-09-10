@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wiquiweb - Desarrollo Web y Diseño Gráfico</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      .header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .header h1 {
+        font-size: 2.5em;
+        margin: 0;
+      }
+      .header p {
+        font-size: 1.2em;
+        margin: 10px 0 0;
+      }
+      .banner {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+        background-color: #222;
+      }
+      .banner img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        position: absolute;
+        animation: slide 12s infinite;
+      }
+      @keyframes slide {
+        0% {
+          opacity: 1;
+        }
+        25% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 0;
+        }
+        75% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .banner .text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        font-size: 2em;
+        font-weight: bold;
+        z-index: 2;
+      }
+      .content {
+        padding: 50px;
+        text-align: center;
+      }
+      .content h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      .content p {
+        font-size: 1.2em;
+        margin-bottom: 30px;
+        line-height: 1.5;
+      }
+      .cta-button {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 30px;
+        font-size: 1.2em;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .cta-button:hover {
+        background-color: #555;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Wiquiweb</h1>
+      <p>Desarrollo Web y Diseño Gráfico Innovador</p>
+    </div>
+
+    <div class="banner">
+      <div class="text" id="bannerText">Creamos Soluciones Web a Medida</div>
+      <img src="banner1.jpg" alt="Desarrollo Web" />
+      <img src="banner2.jpg" alt="Diseño Gráfico" style="animation-delay: 4s" />
+      <img
+        src="banner3.jpg"
+        alt="Marketing Digital"
+        style="animation-delay: 8s"
+      />
+    </div>
+
+    <div class="content">
+      <h2>Nuestros Servicios</h2>
+      <p>
+        En Wiquiweb, nos especializamos en el desarrollo de sitios web
+        personalizados, diseño gráfico de alta calidad, y estrategias de
+        marketing digital. Nuestro objetivo es impulsar tu presencia online con
+        soluciones innovadoras y efectivas.
+      </p>
+      <button class="cta-button">Contáctanos</button>
+    </div>
+
+    <script>
+      const texts = [
+        "Creamos Soluciones Web a Medida",
+        "Diseño Gráfico Impactante",
+        "Marketing Digital Innovador",
+      ];
+      let index = 0;
+      const bannerText = document.getElementById("bannerText");
+
+      setInterval(() => {
+        index = (index + 1) % texts.length;
+        bannerText.textContent = texts[index];
+      }, 4000);
+    </script>
+  </body>
+</html>
