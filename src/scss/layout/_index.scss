@@ -37,6 +37,7 @@
   font-family: $fuente_principal;
   position: relative;
   display: inline-block;
+  line-height: 6rem;
   font-weight: 600;
   color: $tertiary-color;
   transition: all 300ms ease-in-out;
@@ -52,6 +53,7 @@
       width: 23px;
       font-size: 1rem;
       font-weight: bold;
+      padding-top: 1.8rem;
       padding-left: 0.2rem;
       vertical-align: middle;
       transition: all 300ms ease-in-out;
@@ -76,7 +78,7 @@
   width: 0;
   background-color: $primari-color;
   position: absolute;
-  bottom: -0.7rem;
+  bottom: 1.2rem;
   left: 0;
   opacity: 0;
   transition: 500ms;
@@ -90,21 +92,37 @@
 .nav__submenu {
   display: block;
   position: absolute;
-  top: 4.3rem;
+  top: 100%;
   left: 2rem;
   min-width: 19rem;
   padding: 1.5rem 1rem;
   border-radius: 4px;
   background-color: $blanco;
   box-shadow: 0px 13px 48px 0 rgba(0, 0, 0, 15%);
-
   opacity: 0;
+  visibility: hidden;
+  transition: all 300ms ease-in-out;
 }
 
-.submenu-item {
-  opacity: 1;
+.submenu__item {
+  opacity: 0;
   transform: translate(2rem);
   transition: all 100ms ease-in-out;
+  &:nth-child(1) {
+    transition-delay: 100ms;
+  }
+  &:nth-child(2) {
+    transition-delay: 200ms;
+  }
+  &:nth-child(3) {
+    transition-delay: 300ms;
+  }
+  &:nth-child(4) {
+    transition-delay: 400ms;
+  }
+  &:nth-child(5) {
+    transition-delay: 500ms;
+  }
 }
 
 .submenu__title {
@@ -119,8 +137,65 @@
   transition: all 300ms ease-in-out;
 }
 
-.nav__item:hover > .nav__submenu {
-  opacity: 1;
-  z-index: 999;
-  left: 0;
+.nav__item {
+  &:hover {
+    > .nav__submenu {
+      opacity: 1;
+      visibility: visible;
+      z-index: 999;
+      left: 0;
+    }
+  }
 }
+
+.nav__item {
+  &:hover {
+    .submenu__item {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+// FIN ESTILOS MENU NAVEGACION Y CABECERA DE LA WEB
+
+/* ESTILOS PARA EL BANNER */
+
+.layout__banner {
+  position: relative;
+  min-height: 60rem;
+  margin: 0 3rem;
+  padding-right: 0;
+  padding-left: 10rem;
+  padding-top: 15rem;
+  padding-bottom: 20rem;
+  border-radius: 60px;
+  overflow: hidden;
+  background-color: $primari-color;
+}
+
+.banner__content {
+  display: inline-block;
+  width: 50%;
+  padding: 0 1.5rem;
+}
+
+.banner__title {
+  font-size: 8rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: $blanco;
+}
+
+.banner__btn {
+  display: inline-block;
+  padding: 2.8rem 4.5rem;
+  border-radius: 20px;
+  background-color: $blanco;
+  color: $primari-color;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0px 45px 80px -25px var($tertiary-color);
+}
+/* FIN ESTILOS PARA EL BANNER */
